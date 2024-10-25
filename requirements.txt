@@ -2,4 +2,3 @@ streamlit
 reportlab
 PyPDF2
 datetime
-import os
