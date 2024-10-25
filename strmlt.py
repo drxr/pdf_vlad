@@ -255,6 +255,7 @@ role = st.text_input('**Введите роль студента на проек
 if role is not None:
     st.write('**Роль студента:** ', role)
 
+st.text('Каждая новая роль вводится с новой строки')
 tasks_raw = st.text_area('**Введите задачи студента в рамках проекта:** ')
 
 if tasks_raw is not None:
