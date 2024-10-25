@@ -262,8 +262,8 @@ if tasks_raw is not None:
     tasks = tasks_raw.split('\n')
 
 st.write('---')
-st.text('Ввведите имя фамилию студента через пробел, пол студента через запятую и пробел')
-st.markdown('Пример: **Маша Петрова, ж** или **Иван Серов, м**')
+st.text('Ввведите имя, фамилию и пол студента через пробел')
+st.markdown('Пример: **Маша Петрова ж** или **Иван Серов м**')
 st.text('Если студентов несколько, то каждый следующий студент вносится с новой строки')
 st.write('---')
 
@@ -271,11 +271,11 @@ students_raw = st.text_area('Введите имя, фамилию и пол с�
 
 if students_raw is not None:
     students_list = students_raw.split('\n')
-    for student in students_list:
+    for num, student in enumerate(students_list):
         if student.split(' ')[-1].lower() not in ['м', 'ж']:
-            st.markdown('Студенты внесены не корректно')
+            st.markdown(num, 'Студент внесен не корректно')
         else:
-            st.markdown('Студенты внесены корректно')  
+            st.markdown(num, 'Студент внесен корректно')  
 
 
 if project_name is not None and description is not None and tasks_raw is not None and students_raw is not None and role is not None:
