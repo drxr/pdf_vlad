@@ -92,11 +92,10 @@ def create_pdf(filename: str,
 
     # Текст для документа
     text_1m = f'''
-    <font color='crimson'><b>{user_name} {user_lastname}</b></font> принимал участие в проекте 
-    <font color='crimson'><b>«{project_name}»</b></font> в период с {start_date} по {end_date} 
-    в качестве <font color='crimson'><b>{role}</b></font>. Данный проект предполагал {description}.
-    Во время проекта <font color='crimson'>{user_name}</font> справился успешно со следующими 
-    задачами:'''
+    <b>{user_name.capitalize()} {user_lastname.capitalize()}</b> принимал участие в проекте 
+    <b>«{project_name}»</b>в период с {start_date} по {end_date} 
+    в качестве {role}. Данный проект предполагал {description}.
+    Во время проекта {user_name.capitalize()} справился успешно со следующими задачами:'''
 
     text_2m = f'''
     На данный момент проект успешно завершен, продукт используется клиентом. Предполагается его 
@@ -104,22 +103,22 @@ def create_pdf(filename: str,
     '''
 
     text_3m = f'''
-    Во время работы над проектом <font color='crimson'>{user_name}</font> продемонстрировал 
+    Во время работы над проектом {user_name.capitalize()} продемонстрировал 
     способность быстро погружаться в задачи по проекту, отличное понимание технических требований, 
     а также внимательность к деталям и прекрасные коммуникативные навыки внутри команды.
     '''
 
     text_4m = f'''
-    Мы уверены, что <font color='crimson'>{user_name}</font> обладает необходимыми знаниями и 
+    Мы уверены, что {user_name.capitalize()} обладает необходимыми знаниями и 
     навыками для успешной работы в области управления IT-проектами, и рекомендуем его для 
     дальнейшего трудоустройства.
     '''
 
     text_1f = f'''
-    <font color='crimson'><b>{user_name} {user_lastname}</b></font> принимала участие в проекте 
-    <font color='crimson'><b>«{project_name}»</b></font> в период с {start_date} по {end_date} 
-    в качестве <font color='crimson'><b>{role}</b></font>. Данный проект предполагал {description}.
-    Во время проекта <font color='crimson'>{user_name}</font> успешно справилась со следующими 
+    <b>{user_name.capitalize()} {user_lastname.capitalize()}</b> принимала участие в проекте 
+    <b>«{project_name}»</b> в период с {start_date} по {end_date} 
+    в качестве {role}. Данный проект предполагал {description}.
+    Во время проекта {user_name.capitalize()} успешно справилась со следующими 
     задачами:'''
 
     text_2f = f'''
@@ -128,13 +127,13 @@ def create_pdf(filename: str,
     '''
 
     text_3f = f'''
-    Во время работы над проектом <font color='crimson'>{user_name}</font> продемонстрировала 
+    Во время работы над проектом {user_name.capitalize()} продемонстрировала 
     способность быстро погружаться в задачи по проекту, отличное понимание технических требований, 
     а также внимательность к деталям и прекрасные коммуникативные навыки внутри команды.
     '''
 
     text_4f = f'''
-    Мы уверены, что <font color='crimson'>{user_name}</font> обладает необходимыми знаниями и 
+    Мы уверены, что {user_name.capitalize()} обладает необходимыми знаниями и 
     навыками для успешной работы в области управления IT-проектами, и рекомендуем ее для 
     дальнейшего трудоустройства.
     '''
