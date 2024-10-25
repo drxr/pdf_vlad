@@ -273,9 +273,9 @@ if students_raw is not None:
     students_list = students_raw.split('\n')
     for num, student in enumerate(students_list):
         if student.split(' ')[-1].lower() not in ['м', 'ж']:
-            st.write(num, 'Студент внесен не корректно')
+            st.write(num + 1, 'Студент внесен не корректно')
         else:
-            st.write(num, 'Студент внесен корректно')  
+            st.write(num + 1, 'Студент внесен корректно')  
 
 
 if project_name is not None and description is not None and tasks_raw is not None and students_raw is not None and role is not None:
