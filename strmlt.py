@@ -298,7 +298,7 @@ if project_name is not None and description is not None and tasks_raw is not Non
             )
 
             name_of_file = name + '_' + last_name + '.pdf'
-            create_pdf(name_of_file, name, last_name, project_name, start_date, finish_date, role, description, tasks, marker)
+            create_pdf(name_of_file, name, last_name, project_name, start_date, finish_date, role, description, tasks, job_type, marker)
             add_text_to_existing_pdf(name_of_file)
             students_letters.append(name_of_file)
         
