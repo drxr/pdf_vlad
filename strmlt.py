@@ -21,6 +21,7 @@ def create_pdf(filename: str,
                role: str, 
                description: str, 
                some_tasks: list[str],
+               job_type: str,
                marker: str) -> None:
     
     '''
@@ -35,6 +36,7 @@ def create_pdf(filename: str,
     - role -> роль студента в проекте (техлид, участник, проектный менеджер и так далее)
     - description -> описание проекта
     - some_tasks -> список задач, реализованных студентом в рамках проекта
+    - job_type -> направление обучения студента
     - marker -> пол студента (задается в поле ввода имени и фамилии студента)
     '''
 
@@ -110,7 +112,7 @@ def create_pdf(filename: str,
 
     text_4m = f'''
     Мы уверены, что {user_name.capitalize()} обладает необходимыми знаниями и 
-    навыками для успешной работы в области управления IT-проектами, и рекомендуем его для 
+    навыками для успешной работы в области {job_type}, и рекомендуем его для 
     дальнейшего трудоустройства.
     '''
 
@@ -134,7 +136,7 @@ def create_pdf(filename: str,
 
     text_4f = f'''
     Мы уверены, что {user_name.capitalize()} обладает необходимыми знаниями и 
-    навыками для успешной работы в области управления IT-проектами, и рекомендуем ее для 
+    навыками для успешной работы в области {job_type}, и рекомендуем ее для 
     дальнейшего трудоустройства.
     '''
     if marker == 'м':
@@ -255,6 +257,11 @@ role = st.text_input('**Введите роль студента на проек
 if role is not None:
     st.write('**Роль студента:** ', role)
 
+job_type = st.text_input(f'**Введите направление обучения студента (родительный падеж)**')
+
+if job_type is not None:
+    st.write('**Роль студента:** ', job_type)
+  
 st.text('Каждая новая задача вводится с новой строки')
 tasks_raw = st.text_area('**Введите задачи студента в рамках проекта:** ')
 
@@ -278,7 +285,7 @@ if students_raw is not None:
             st.write(num + 1, 'Студент внесен корректно')  
 
 
-if project_name is not None and description is not None and tasks_raw is not None and students_raw is not None and role is not None:
+if project_name is not None and description is not None and tasks_raw is not None and students_raw is not None and role is not None and job_type is not None:
     if st.button('Начать генерацию'):
 
         students_letters = []
