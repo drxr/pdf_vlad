@@ -196,7 +196,7 @@ def create_pdf(filename: str,
         doc.build(elements)
 
 
-def add_text_to_existing_pdf(filename) -> None:
+def add_text_to_existing_pdf(filename, schemename) -> None:
 
     '''Добавляет текст, созданный функцией create_pdf к файлу шаблона 
     sample2.pdf и создает новый файл с благодарственным письмом
@@ -206,7 +206,7 @@ def add_text_to_existing_pdf(filename) -> None:
     new_pdf = PdfReader(filename)
         
     # читаем файл с шаблоном
-    existing_pdf = PdfReader('sample2.pdf', "rb")
+    existing_pdf = PdfReader(schemename, "rb")
     output = PdfWriter()
     
     # соединяем оба файла
@@ -219,7 +219,7 @@ def add_text_to_existing_pdf(filename) -> None:
     output.write(output_stream)
     output_stream.close()
 
-
+# Добавляем текущую дату и забираем из нее отдельно день, месяц и год
 nowaday = datetime.today().date()
 now_month = datetime.today().month
 now_year = datetime.today().year
@@ -311,7 +311,7 @@ if project_name is not None and description is not None and tasks_raw is not Non
 
             name_of_file = name + '_' + last_name + '.pdf'
             create_pdf(name_of_file, name, last_name, project_name, start_date, finish_date, role, description, tasks, job_type, marker)
-            add_text_to_existing_pdf(name_of_file)
+            add_text_to_existing_pdf(name_of_file, option_file)
             students_letters.append(name_of_file)
         
         with zipfile.ZipFile('students.zip', 'w') as my_zip:
