@@ -229,6 +229,15 @@ current_date = datetime(now_year, now_month, 1).date()
 st.title('**Генератор PDF для рекомендательных писем**')
 st.text('Кнопка генерации писем появится после внесения данных во все поля')
 
+option_selector = st.selectbox(label='Выберите тип практики в мастерской', options=['Обязательная практика', 'Дополнительная практика']
+st.write(option_selector)
+                               
+option_file = ''
+if option_selector = 'Обязательная практика':
+  option_file = 'sample3.pdf'
+else:
+  option_file = 'sample2.pdf')
+                          
 project_name = st.text_input('**Введите название проекта:**', value=None)
 
 if project_name is not None:
