@@ -236,7 +236,7 @@ option_selector = st.selectbox(
 st.write(option_selector)
                                
 option_file = ''
-if option_selector = 'Обязательная практика':
+if option_selector == 'Обязательная практика':
   option_file = 'sample3.pdf'
 else:
   option_file = 'sample2.pdf'
