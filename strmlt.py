@@ -95,7 +95,7 @@ def create_pdf(filename: str,
     # Текст для документа
     text_1m = f'''
     <b>{user_name.capitalize()} {user_lastname.capitalize()}</b> принимал участие в проекте 
-    <b>«{project_name}»</b>в период с {start_date} по {end_date} 
+    <b>«{project_name}»</b> в период с {start_date} по {end_date} 
     в качестве {role}. Данный проект предполагал {description}.
     Во время проекта {user_name.capitalize()} справился успешно со следующими задачами:'''
 
