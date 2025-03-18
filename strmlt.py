@@ -239,7 +239,7 @@ option_file = ''
 if option_selector = 'Обязательная практика':
   option_file = 'sample3.pdf'
 else:
-  option_file = 'sample2.pdf')
+  option_file = 'sample2.pdf'
                           
 project_name = st.text_input('**Введите название проекта:**', value=None)
 
